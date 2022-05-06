@@ -1,4 +1,4 @@
-package com.company.nnguyen;
+
 
 import java.util.*;
 
@@ -38,6 +38,11 @@ public class RR extends Thread{
             currentProcess.burstTime -= timeQuantum;
             if (currentProcess.burstTime > 0) {
                 queue.add(currentProcess);
+            }
+            try{
+                Thread.sleep(100);
+            } catch(Exception e){
+                e.printStackTrace();
             }
         }
         System.out.printf("%s (RR) is done\n", name);

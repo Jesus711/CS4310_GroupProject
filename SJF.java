@@ -1,4 +1,3 @@
-package com.company.nnguyen;
 
 import java.util.*;
 
@@ -17,6 +16,11 @@ public class SJF extends Thread{
         bubbleSort(processes, burstTime);
         for (int i = 0; i < processes.size(); i++) {
             System.out.printf("%s (SJF) is working on process %d\n", name, processes.get(i));
+            try{
+                Thread.sleep(100);
+            } catch(Exception e){
+                e.printStackTrace();
+            }
         }
         System.out.printf("%s (SJF) is done\n", name);
 
@@ -40,6 +44,7 @@ public class SJF extends Thread{
 
                 }
             }
+
         }
 
     }
